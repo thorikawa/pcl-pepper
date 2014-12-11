@@ -1,0 +1,4 @@
+setup.gdb
+/bin/pclsample
+setup_target.gdb
+remote_gdbserver.sh
