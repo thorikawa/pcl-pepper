@@ -29,6 +29,10 @@ FRAMERATE = 15
 COLOR_SPACE = 17 # mono16 Note: this is not documented as of Dec 14, 2014
 
 def main(args):
+	# reference
+	# https://github.com/ros-aldebaran/romeo_robot/blob/master/romeo_sensors/nodes/camera_depth.py
+	# https://github.com/ros-perception/image_pipeline/blob/indigo/depth_image_proc/src/nodelets/point_cloud_xyz.cpp
+
 	video = ALProxy('ALVideoDevice', args.ip, args.port)
 	client = video.subscribeCamera(NAME, CAMERA_ID, RESOLUTION, COLOR_SPACE, FRAMERATE)
 
