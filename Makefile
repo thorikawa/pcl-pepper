@@ -17,11 +17,14 @@ BUILD_DIR=bin
 SRCS=main.cpp
 OBJS=${SRCS:%.cpp=${BUILD_DIR}/%.o}
 
+VIS_SRCS=visualizer.cpp
+VIS_OBJS=${VIS_SRCS:%.cpp=${BUILD_DIR}/%.o}
+
 CONVERT_SRCS=convert.cpp
 CONVERT_OBJS=${CONVERT_SRCS:%.cpp=${BUILD_DIR}/%.o}
 
-main: ${OBJS}
-	${CXX} ${LDFLAGS} ${OBJS} -o $@
+visualizer: ${VIS_OBJS}
+	${CXX} ${LDFLAGS} ${VIS_OBJS} -o $@
 convert: ${CONVERT_OBJS}
 	${CXX} ${LDFLAGS} ${CONVERT_OBJS} -o $@
 ${BUILD_DIR}/%.o : %.cpp
